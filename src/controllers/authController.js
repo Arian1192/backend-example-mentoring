@@ -1,6 +1,8 @@
 const User = require('../models/userModel'); // We import the userModel.
 const bcrypt = require('bcryptjs'); // We import bcrypt to encrypt the password.
 const jwt = require('jsonwebtoken'); // We import jwt to create the JWT.
+
+// TODO: ARREGLAR ESTO !!!!!!!! 
 const PrivateKey = "Perro" // We create a private key to create the JWT. This key should be in a .env file.
 
 // methods for authController

@@ -6,8 +6,7 @@ const isUserOnDatabase = async (req, res, next) => {
         const user = await User.findById(id)// We search the user by id.
         if(user){
             console.log("Entro en el middleware antes que en la ruta")// If the user exists we continue with the next middleware.
-            next()
-            
+            next() // If the user exists we continue with the next middleware.
         }else{
             res.status(404).json({message: 'User not found at the middleware'}) // If the user doesn't exist we send a message.
         }

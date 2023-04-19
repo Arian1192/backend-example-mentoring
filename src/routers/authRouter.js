@@ -3,7 +3,7 @@
 const express = require('express');
 const {register, login} = require('../controllers/authController');
 const noUserEmailRepeat = require('../utils/middlewares/noUserEmailRepeat');
-const isUserOnDatabase = require('../utils/middlewares/isUserOnDatabase');
+
 
 
 const authRouter = express.Router();

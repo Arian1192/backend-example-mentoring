@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
  * that is not a good practice, we should use the .env variables to hide the uri of the database.
  */
 
+// TODO: ARREGLAR ESTO !
 
 const dataBaseConnections = async () => {
     try{
