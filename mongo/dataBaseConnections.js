@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
+const URL_DATABASE= process.env.URL_DATABASE;
 
 /**
  * @description Here we create the connection to the database, IT IS IMPORTANT TO CREATE THIS FILE WITH THE CONNECTION TO THE DATABASE
@@ -11,7 +14,7 @@ const mongoose = require('mongoose');
 
 const dataBaseConnections = async () => {
     try{
-        await mongoose.connect('mongodb+srv://arianlearning:arianlearning@cluster0.aqe7eco.mongodb.net/test');
+        await mongoose.connect(URL_DATABASE);
         console.log("Database connected successfully");
     }catch(err){
         console.log(err);
