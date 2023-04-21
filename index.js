@@ -5,6 +5,7 @@ const authRouter = require('./src/routers/authRouter');
 const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
+const productRouter = require('./src/routers/productRouter');
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json())
@@ -13,6 +14,7 @@ dataBaseConnections();
 
 app.use("/user/auth", authRouter)
 app.use("/user", userRouter);
+app.use('/product', productRouter)
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
