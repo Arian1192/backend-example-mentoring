@@ -9,6 +9,7 @@ redisClient.on("connect", function (err) {
 
 const getAllUsers = async (req, res) => {
   try {
+    // add ttl to redis cache
     const ttl = 10; //
     const cachedData = await redisClient.get("users");
     if (cachedData) {
