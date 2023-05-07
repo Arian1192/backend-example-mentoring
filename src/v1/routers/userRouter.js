@@ -11,7 +11,7 @@ const {
   patchUser,
   deleteUser,
 } = require("../controllers/userController"); // We import the methods from the userController.
-const isUserOnDatabase = require("../utils/middlewares/isUserOnDatabase");
+const isUserOnDatabase = require("../../../utils/middlewares/isUserOnDatabase");
 
 const userRouter = express.Router(); // We create a new router.
 // get Methods
