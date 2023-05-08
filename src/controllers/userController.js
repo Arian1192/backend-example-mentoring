@@ -9,7 +9,7 @@ redisClient.on("connect", function (err) {
 
 const getAllUsers = async (req, res) => {
   try {
-    // Este es un comentario de prueba para el weebhook de github
+    // Este es un comentario de prueba para el weebhook de githubb
     const ttl = 10; //
     const cachedData = await redisClient.get("users");
     if (cachedData) {
