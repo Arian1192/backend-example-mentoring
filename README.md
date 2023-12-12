@@ -4,7 +4,6 @@
 >
 > Clonamos el repo y accedemos a la carpeta, instalamos las dependencias con:
 >
-> 
 > npm i
 > una vez hemos instalado las dependencias levantamos docker para la imagen de redis ( ni caso a esto )
 > solo ejecutar antes de levantar el backend: 
