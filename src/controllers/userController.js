@@ -1,5 +1,4 @@
 const User = require("../models/userModel");
-// const redisClient = require("../../index");
 const redis = require("redis");
 const redisClient = redis.createClient(6379, "localhost");
 redisClient.connect();
@@ -49,6 +48,7 @@ const getUserById = async (req, res) => {
 // post Methods
 
 const postUser = async (req, res) => {
+  console.log("creo un nuevo usuario")
   const { name, email, password } = req.body; // We get the data from the body.
   try {
     const isEmailExist = await User.find({ email: email }); // We check if the user already exists.
@@ -69,12 +69,14 @@ const postUser = async (req, res) => {
 
 const patchUser = async (req, res) => {
   const { id } = req.params; // We get the id from the params.
+  console.log(id)
   const body = req.body; // We get the data from the body.
   try {
     const userUpdate = await User.findByIdAndUpdate({ _id: id }, body, {
       new: true,
     }); // We update the user.
     if (userUpdate) {
+      await redisClient.del("users"); // delete cache
       res.status(200).json(userUpdate); // If the user exists we send the user updated.
     } else {
       res.status(404).json({ message: "User not found" }); // If the user doesn't exist we send a message.

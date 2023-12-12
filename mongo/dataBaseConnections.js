@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 const URL_DATABASE= process.env.URL_DATABASE;
-
+console.log(URL_DATABASE)
 /**
  * @description Here we create the connection to the database, IT IS IMPORTANT TO CREATE THIS FILE WITH THE CONNECTION TO THE DATABASE
  * USING .env VARIABLES. not like who we are doing here.
